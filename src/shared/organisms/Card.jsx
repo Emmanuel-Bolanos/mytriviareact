@@ -1,16 +1,10 @@
 import React from 'react';
-
-const divStyle = {
-  backgroundColor: "#D9EAF8",
-  margin: "50px",
-  padding: "30px",
-  borderRadius: "15px"
-};
+import '../trivia.css';
 
 export const Card = () => {
   return (
     <React.Fragment>
-      <div style={divStyle}>
+      <div className="divStyle">
         <h2> QUESTION </h2>
         <p> ANSWER </p>
         <p> ANSWER </p>

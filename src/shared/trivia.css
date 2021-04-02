@@ -1,0 +1,22 @@
+.counterStyle {
+  background-color: #D9EAF8;
+  margin: 50px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.buttonStyle {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.buttonNav {
+  position: relative;
+}
+
+.divStyle {
+  background-color: #D9EAF8;
+  margin: 50px;
+  padding: 30px;
+  border-radius: 15px;
+}
