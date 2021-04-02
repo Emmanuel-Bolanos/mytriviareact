@@ -4,7 +4,7 @@ import '../trivia.css';
 export const Card = () => {
   return (
     <React.Fragment>
-      <div className="divStyle">
+      <div className="cardStyle">
         <h2> QUESTION </h2>
         <p> ANSWER </p>
         <p> ANSWER </p>

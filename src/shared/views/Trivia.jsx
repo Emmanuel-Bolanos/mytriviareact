@@ -6,12 +6,14 @@ import '../trivia.css';
 export const Trivia = () => {
   return (
     <React.Fragment>
-      <p className="counterStyle"> Counter: 0/10 </p>
-      <Card />
-      <div className="buttonNav">
-        <button className="buttonStyle"> Previous </button>
-        <button className="buttonStyle"> Answer </button>
-        <button className="buttonStyle"> Next </button>
+      <div className="container">
+        <p className="counterStyle"> Counter: 0/10 </p>
+        <Card />
+        <div className="buttonNav">
+          <button className="buttonStyle"> Previous </button>
+          <button className="buttonStyle"> Answer </button>
+          <button className="buttonStyle"> Next </button>
+        </div>
       </div>
     </React.Fragment>
   );

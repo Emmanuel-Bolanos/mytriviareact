@@ -1,22 +1,52 @@
-.counterStyle {
-  background-color: #D9EAF8;
-  margin: 50px;
-  padding: 30px;
+body {
+  background-color: rgb(189, 192, 204);
+}
+
+.container {
+  background-image: linear-gradient(305deg, rgba(214, 40, 40, 0.75), rgba(247, 127, 0, 0.75));
+  margin: 2em 1em;
+  color: #011627;
+  display: flex;
+  height: auto;
+  max-width: 500px;
+  min-width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   border-radius: 15px;
 }
 
-.buttonStyle {
-  margin: 10px;
+.counterStyle {
+  padding: 1em;
+  border-radius: 15px;
+
+}
+
+.cardStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border-radius: 15px;
   font-size: 20px;
 }
 
 .buttonNav {
-  position: relative;
+  align-self: center;
 }
 
-.divStyle {
-  background-color: #D9EAF8;
-  margin: 50px;
-  padding: 30px;
-  border-radius: 15px;
+.buttonStyle {
+  padding: 0.3em;
+  margin: 1em 0.5em;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7ede2;
+  box-shadow: 2px 1px 1px black;
+}
+
+.buttonStyle:hover, .buttonStyle:focus {
+  background-color: #f9c74f;
+  transition: background-color 1s ease;
 }
