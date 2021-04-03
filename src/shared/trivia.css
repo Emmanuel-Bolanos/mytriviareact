@@ -15,6 +15,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 15px;
+  box-shadow: 2px 2px black;
 }
 
 .counterStyle {
@@ -28,13 +29,30 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  text-align: center;
   padding: 1em;
   border-radius: 15px;
   font-size: 20px;
 }
 
-.buttonNav {
-  align-self: center;
+.answerButton {
+  padding: 0.5em;
+  margin: 0.5em;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  box-shadow: 1px 1px black;
+  background-color: rgba(237, 240, 77, 0.7);
+}
+
+.answerButton:hover, .answerButton:focus {
+  transform: scale(1.25);
+  transition: transform 1s ease;
+  outline: none;
+}
+
+.answerButton:focus {
+  color: green;
 }
 
 .buttonStyle {
@@ -45,9 +63,10 @@ body {
   border-radius: 10px;
   background-color: #f7ede2;
   box-shadow: 2px 1px 1px black;
+  outline: none;
 }
 
-.buttonStyle:hover, .buttonStyle:focus {
+.buttonStyle:hover, .buttonStyle:active {
   background-color: #f9c74f;
-  transition: background-color 1s ease;
+  transition: background-color 0.75s ease;
 }

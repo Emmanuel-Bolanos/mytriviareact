@@ -7,7 +7,7 @@ export const Card = ({question, answers, correctAnswer, isCorrect}) => {
   };
 
   const allAnswers = () => {
-    return [...answers, correctAnswer];
+    return [...answers, correctAnswer].sort();
   }
 
   return (
@@ -15,9 +15,9 @@ export const Card = ({question, answers, correctAnswer, isCorrect}) => {
       <div className="cardStyle">
         <h2> {question} </h2>
         {allAnswers().map((answer, index) => (
-          <p key={index} onClick={() => checkAnswer(answer)}>
+          <button className="answerButton" key={index} onClick={() => checkAnswer(answer)}>
             {answer}
-          </p>
+          </button>
         ))}
       </div>
     </React.Fragment>

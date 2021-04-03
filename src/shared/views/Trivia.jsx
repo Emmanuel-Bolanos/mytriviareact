@@ -3,12 +3,14 @@ import { Card } from "../organisms/Card"
 import '../trivia.css';
 import { fetchQuestions } from "../services/triviaService";
 
+const usedQuestions=[];
+
 export const Trivia = () => {
   const [questions, updateQuestions] = useState();
   const [isLoading, updateLoading] = useState(true);
   const [questionNo, updateQuestionNo] = useState(0);
   const [score, updateScore] = useState(0);
-
+  
   useEffect(() => {
     const receiveQuestions = async () => {
       updateQuestions(await fetchQuestions());
@@ -18,8 +20,10 @@ export const Trivia = () => {
   }, []);
 
   const handleCallback = (isCorrect) => {
-    if (isCorrect) {
-      updateScore(score + 1);
+    console.log(usedQuestions);
+    if (!usedQuestions.includes(questionNo)){
+      usedQuestions.push(questionNo);
+      if (isCorrect) return updateScore(score + 1);
     }
   };
   
@@ -32,12 +36,10 @@ export const Trivia = () => {
     }
   };
 
-
-
   if(isLoading) return (<p> Loading... </p>);
 
-  // TODO Mix answers
-  // TODO un click x pregunta
+  // DONE Mix answers: first solution: use a sort to return the solution in a random spot : )
+  // DONE un click x pregunta: solved by using an array that stores used questions. Should try to find another way tho
 
   if (!isLoading) {
     return (
