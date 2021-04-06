@@ -3,26 +3,25 @@ import { Card } from "../organisms/Card"
 import '../trivia.css';
 import { fetchQuestions } from "../services/triviaService";
 
-const usedQuestions=[];
-
 export const Trivia = () => {
   const [questions, updateQuestions] = useState();
   const [isLoading, updateLoading] = useState(true);
   const [questionNo, updateQuestionNo] = useState(0);
   const [score, updateScore] = useState(0);
-  
+  const [usedQuestions, updateUsedQuestion] = useState([]);
+
   useEffect(() => {
-    const receiveQuestions = async () => {
-      updateQuestions(await fetchQuestions());
-      updateLoading(false);
-    };
     receiveQuestions();
   }, []);
 
+  const receiveQuestions = async () => {
+    updateQuestions(await fetchQuestions());
+    updateLoading(false);
+  };
+
   const handleCallback = (isCorrect) => {
-    console.log(usedQuestions);
     if (!usedQuestions.includes(questionNo)){
-      usedQuestions.push(questionNo);
+      updateUsedQuestion(prevState => [...prevState, questionNo]);
       if (isCorrect) return updateScore(score + 1);
     }
   };
@@ -38,9 +37,6 @@ export const Trivia = () => {
 
   if(isLoading) return (<p> Loading... </p>);
 
-  // DONE Mix answers: first solution: use a sort to return the solution in a random spot : )
-  // DONE un click x pregunta: solved by using an array that stores used questions. Should try to find another way tho
-
   if (!isLoading) {
     return (
       <React.Fragment>
@@ -48,6 +44,7 @@ export const Trivia = () => {
           <p className="counterStyle"> SCORE: {score}/10 </p>
           <Card 
             question={questions[questionNo].question}
+            questionNo={questionNo}
             answers={questions[questionNo].incorrect_answers}
             correctAnswer={questions[questionNo].correct_answer}
             isCorrect={handleCallback}
